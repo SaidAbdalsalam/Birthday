@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>عيد ميلاد مريومتي 😍</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      :root {
+        --n: #0a0a0c;
+        --n2: #5a1440;
+        --pk: #ff7eb6;
+        --rd: #ff2d87;
+        --pu: #ffb3d1;
+        --w: #fff;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Cairo, Tahoma, sans-serif;
+        color: var(--w);
+        background:
+          radial-gradient(circle at 85% 0, #c2185b8c, transparent 55%) fixed,
+          radial-gradient(circle at 5% 100%, #ff4d9d4d, transparent 50%) fixed,
+          var(--n);
+        min-height: 100vh;
+        overflow-x: hidden;
+        line-height: 1.9;
+        font-size: 17px;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      h1,
+      h2,
+      .big {
+        font-family: "Aref Ruqaa", serif;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+      section {
+        padding: 56px 22px;
+        max-width: 560px;
+        margin: auto;
+        text-align: center;
+      }
+      #app {
+        transition: transform 1.6s cubic-bezier(0.6, -0.25, 0.3, 1.25);
+      }
+      #app.f {
+        transform: rotate(180deg);
+      }
+      #intro {
+        min-height: 100vh;
+        display: grid;
+        align-content: center;
+        gap: 18px;
+      }
+      #intro .big {
+        font-size: 40px;
+        color: var(--pk);
+      }
+      button,
+      .btn {
+        font: inherit;
+        font-weight: 700;
+        color: var(--w);
+        background: linear-gradient(135deg, var(--rd), var(--pk));
+        border: 0;
+        border-radius: 40px;
+        padding: 12px 30px;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 8px 26px #ff2d8766;
+        cursor: pointer;
+      }
+      button:focus-visible,
+      .btn:focus-visible {
+        outline: 3px solid var(--pu);
+        outline-offset: 3px;
+      }
+      h1 {
+        font-size: 40px;
+      }
+      h1 span {
+        color: var(--pk);
+      }
+      h2 {
+        font-size: 30px;
+        color: var(--pk);
+        margin-bottom: 14px;
+      }
+      .date {
+        font-family: "Aref Ruqaa", serif;
+        font-size: 56px;
+        color: var(--pu);
+        line-height: 1.2;
+      }
+      .ecg {
+        width: 100%;
+        max-width: 340px;
+        margin-top: 22px;
+      }
+      .ecg path {
+        fill: none;
+        stroke: var(--pk);
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 420;
+        stroke-dashoffset: 420;
+        animation: ecg 2.6s linear infinite;
+      }
+      @keyframes ecg {
+        to {
+          stroke-dashoffset: -420;
+        }
+      }
+      .row {
+        display: flex;
+        gap: 18px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 16px 8vw 22px;
+        margin: 0 -22px;
+      }
+      .one {
+        display: flex;
+        justify-content: center;
+        padding: 16px 0 22px;
+      }
+      figure {
+        background: var(--w);
+        color: #333;
+        padding: 10px 10px 14px;
+        border-radius: 6px;
+        box-shadow: 0 12px 30px #0008;
+        transform: rotate(-2deg);
+        flex: 0 0 70%;
+        scroll-snap-align: center;
+      }
+      .one figure { flex-basis: 55%; }
+      figure:nth-child(even) {
+        transform: rotate(2deg);
+      }
+      figure img,
+      .slot {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        display: block;
+        border-radius: 3px;
+      }
+      .slot {
+        display: grid;
+        place-items: center;
+        border: 2px dashed var(--pk);
+        color: var(--rd);
+        background: #ff7eb614;
+        font-weight: 700;
+      }
+      figcaption {
+        margin-top: 8px;
+        font-size: 15px;
+      }
+      figcaption:empty {
+        display: none;
+      }
+      .note {
+        background: #ff7eb61f;
+        border-right: 4px solid var(--pu);
+        border-radius: 12px;
+        padding: 16px 18px;
+        text-align: right;
+        margin: 14px 0;
+      }
+      .note b {
+        color: var(--pk);
+      }
+      .chart {
+        background: #fff3f8;
+        color: #3a1428;
+        border-radius: 6px;
+        padding: 20px 18px;
+        text-align: right;
+        box-shadow: 0 12px 30px #0008;
+        border-top: 10px solid var(--rd);
+      }
+      .chart h3 {
+        font-family: "Aref Ruqaa", serif;
+        font-size: 24px;
+        color: var(--rd);
+        text-align: center;
+        margin-bottom: 8px;
+      }
+      .chart p {
+        display: flex;
+        gap: 10px;
+        border-bottom: 1px dashed #c9c4d8;
+        padding: 5px 0;
+        line-height: 1.7;
+      }
+      .chart p b {
+        flex: 0 0 7.2em;
+        color: var(--n2);
+      }
+      #heart {
+        margin-top: 26px;
+        font-size: 64px;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        line-height: 1;
+      }
+      #heart.b {
+        animation: beat 0.6s 2;
+      }
+      @keyframes beat {
+        30% {
+          transform: scale(1.35);
+        }
+        60% {
+          transform: scale(0.95);
+        }
+      }
+      #hm {
+        min-height: 2em;
+        color: var(--pk);
+        margin-top: 6px;
+      }
+      #msg {
+        white-space: pre-line;
+        min-height: 12em;
+        margin: 18px 0;
+        font-size: 19px;
+      }
+      .p {
+        position: fixed;
+        top: -30px;
+        z-index: 0;
+        pointer-events: none;
+        animation: fall linear forwards;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(112vh) rotate(360deg);
+        }
+      }
+      #cf {
+        position: fixed;
+        inset: 0;
+        z-index: 5;
+        pointer-events: none;
+      }
+      #mus {
+        position: fixed;
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        z-index: 6;
+        width: 54px;
+        height: 54px;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+      }
+      #mus i {
+        width: 4px;
+        height: 6px;
+        border-radius: 2px;
+        background: var(--w);
+        animation: eq 0.9s ease-in-out infinite;
+      }
+      #mus i:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      #mus i:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      #mus i:nth-child(4) {
+        animation-delay: 0.1s;
+      }
+      #mus.off {
+        filter: grayscale(0.7);
+        opacity: 0.85;
+      }
+      #mus.off i {
+        animation: none;
+        height: 6px;
+      }
+      @keyframes eq {
+        0%,
+        100% {
+          height: 6px;
+        }
+        50% {
+          height: 22px;
+        }
+      }
+      section,
+      .chart,
+      figure {
+        position: relative;
+        z-index: 1;
+      }
+      .rv {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.9s,
+          transform 0.9s;
+      }
+      .rv.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .p {
+          display: none;
+        }
+        #app {
+          transition: none;
+        }
+        .ecg path,
+        #mus i {
+          animation: none;
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="cf" hidden></canvas>
+    <audio id="bg" loop preload="auto"></audio>
+    <button id="mus" class="off" hidden aria-label="تشغيل الموسيقى">
+      <i></i><i></i><i></i><i></i>
+    </button>
+    <main id="app" class="f">
+      <section id="intro">
+        <p class="big">الدنيا متشقلبة شوية… 🙃</p>
+        <p>اضغطي عشان تعدليها</p>
+        <div><button id="flip">اقلبي الدنيا</button></div>
+      </section>
+
+      <div id="rest" hidden>
+        <section class="rv">
+          <p class="date">١٠ / ١٠</p>
+          <h1>كل سنة وإنتي طيبة يا مريومتي <span>😍😍🤍</span></h1>
+          <p>بما ان حضرتك بتحبي الدلع قولت مينفعش اعدي اليوم دا بالساهل كدا</p>
+          <svg class="ecg" viewBox="0 0 300 60" aria-hidden="true">
+            <path d="M0 30H78l8-10 8 10h10l8-26 10 52 8-26h14l8-8 8 8H300" />
+          </svg>
+        </section>
+
+        <section class="rv">
+          <h2>شوية صور كداا</h2>
+          <p>ايه يجدعان الملاك الصغير داا بس</p>🤍</p>
+          <div class="one" id="child"></div>
+          <div class="note">
+            <b>8/9/2021</b><br />عمري ما انسى اليوم دا ابدا كان اول يوم احس فيه بغيره شديده بالشكل دا من وقتها بس عرفت انك حاجه مختلفه عن كل اللي اعرفهم وقابلتهم في حياتي شعور عمري ما انساه لما اكتشفت اني مره واحده كدا من غير اي سبب اني بحب  كانت دي اول مره احس بالاحساس دا كان معاكي انتي 
+          </div>
+             <div class="note">
+            <b>26/7/2026</b><br />
+            اليوم دا كان يوم نتيجتك انا عارف ان انتي ممكن تبقي ناسياه بس انا فاكره ومش هنساه انا اصلا ناسي يوم نتيجتي اليوم دا انا فضلت قاعد قدام اللاب وصفحة الأزهر طول اليوم مستني النتيجه كنت متشوق ليها اوي بجد ولما النتيجه جت ومنار قالتهالي مش قادر اوصفلك كم الفرحه اللي كنت فيه حسيت بفرحه كبيره اوي وكنت فخور بيكي بشكل كبير مع اني معملتش اي حاجه تخليني فخور بالشكل دا ومكنش بينا حاجه حتى بس شعور الفخر دا من وقتها لحد اللحظه دي لسا معايا وهيفضل العمر كلو 
+             </div>
+          <div class="note">
+            <b>25/8/2026</b><br />
+            دا بقا يوم عمري ما هنساه ابدا لما جيت لمامتك وعرفتها اني بحبك وقالتلي اني اقولك واشوف ردك ايه اليوم دا بجد كان غريب اوي اول مره ابدا اعبر عن مشاعري بجد واول مره اقول لواحده انا بحبك مش عارف اوصفلك الشعور بس كان غريب كدا بقالي سنين بحبك بيني وبين نفسي ودلوقتي بقولك انا بحبك وبعرفك اللي جوايا كانت لحظه بجد غريبه عليا         </div>
+        <div class="note">
+            <b>26/8/2026</b><br />
+         دا اليوم التوب بقا يوم ما قولتيلي انك موافقه لو السكشنين الي فوق كنت بقولك عن لخبطت المشاعر اللي كنت فيها اليوم دا اكبرهم لما شوفت الرساله بتاعتك فضلت باصصلها شوية مش عارف افكر حسيت وقتها ان الدنيا وقفت كدا مش فاهم انا حاسس بايه ومش عارف ارد اقول ايه بجد اللي هزو ازاي يعني بعد كل السنين دي اللي كاتم جوايا خلاص معدش فيه كتمان وبقينا مع بعض دا بجددد
+          </div>
+              <div class="note"> <b>10/10/2026</b><br/> والنهارده بقا عيد ميلاد حبيبة قلبي وأغلى حد عندي أول عيد ميلاد ليكي واحنا مع بعض محبتش يعدي كدا بالساهل وقولت اعملك موقع صغير كدااحتفالا بيكي يارب يعجبمك وعلى فكره انا عملته في اليوم اللي كنت بقولك فيه انا مخنوق بسبب مشروع التخرح والشغل والحاجات دي علشان تعرفي اني حتى مهما كنت مخنوق هعمل اللي يفرحك برضو</div>
+        </section>
+
+        <section class="rv">
+          <h2>ودلوقتي</h2>
+          <p>قولت احط كام صورة للمزه بتاعتي بعد ما بقت دكتوره متألقه وحلوه كدا🌸</p>
+          <div class="row" id="recent"></div>
+        </section>
+
+        <section class="rv">
+          <h2>تقرير طبي غير رسمي 🩺</h2>
+          <div class="chart">
+            <h3>ملف حالة</h3>
+            <p><b>المريض:</b> سعيد</p>
+            <p><b>التشخيص:</b> حب مريم المزمن</p>
+            <p><b>بداية الأعراض:</b> ٨/٩/٢٠٢١</p>
+            <p><b>العلاج:</b>بصراحه مش عايز اتعالج انا مرتاح كداا</p>
+            <p><b>تحت إشراف:</b> الدكتورة مريم، بإذن الله 🩷</p>
+          </div>
+          <button id="heart" aria-label="اسمعي نبضي">🫀</button>
+          <p id="hm">دوسي على القلب</p>
+        </section>
+
+        <section class="rv">
+          <h2>وفي حاجة أخيرة</h2>
+          <button id="gift">افتحي رسالتي 💌</button>
+          <p id="msg"></p>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      /* ===== إعدادات: عدّل من هنا ===== */
+      // حط مسار كل صورة (مثال: "photos/maryam-kid.jpg") أو رابط. سيب "" يظهر مكان فاضي.
+      const PHOTOS = {
+  childhood: "photos/child.jpg",
+  recent: [
+    "photos/recent-1.jpg",
+    "photos/recent-2.jpg",
+    "photos/recent-3.jpg",
+    "photos/recent-4.jpg",
+  ],
+};
+      // تقدر تزود صور أو تقلل بزيادة/حذف عناصر recent، وتضيف تعليق من CAPTIONS بنفس الترتيب
+      const CAPTIONS = { childhood: "", recent: ["", "", "", ""] };
+      // ملف الموسيقى (mp3 أو m4a) جنب الصفحة، مثال: "music/song.mp3". بيشتغل أول ما تدوس "اقلبي الدنيا"، والزرار اللي في الركن هو اللي بيتحكم فيها. لو فاضي بيشتغل لحن بسيط مدمج مؤقتًا
+     const MUSIC_SRC = "music/song.mp3";
+      const MSG = `كل سنه وانتي طيبة وبألف خير يا حبيبتي.
+      كل سنه وانتي معايا ومحققه كل احلامك ومبسوطه ومتهنية.
+      كل سنه وانا بحبك وفخور بيكي وبأي انجاز حققتيه ولسا هتحققيه.
+      كل سنه وانتي سبب أي حاجه بعملها وسبب أي اجتهاد ليا وأي طموح بسعى له.
+      وربنا يجمعني بيكي في الحلال عن قريب يا حبيبتي وافضل احتفل بيكي كل سنه لحد آخر العمر`;
+      /* ================================ */
+
+      const $ = (s) => document.querySelector(s);
+      const fig = (src, cap) => {
+        const f = document.createElement("figure");
+        f.innerHTML = src
+          ? `<img src="${src}" alt="">`
+          : '<div class="slot">📷 حطّ الصورة هنا</div>';
+        const c = document.createElement("figcaption");
+        c.textContent = cap || "";
+        f.append(c);
+        return f;
+      };
+      $("#child").append(fig(PHOTOS.childhood, CAPTIONS.childhood));
+      PHOTOS.recent.forEach((s, i) =>
+        $("#recent").append(fig(s, CAPTIONS.recent[i])),
+      );
+
+      const bg = $("#bg"),
+        mus = $("#mus");
+      if (MUSIC_SRC) bg.src = MUSIC_SRC;
+
+      /* لحن بسيط مدمج بيشتغل مؤقتًا لو MUSIC_SRC فاضي */
+      const NOTES = [
+        523.25, 659.25, 783.99, 659.25, 587.33, 698.46, 880, 698.46, 523.25,
+        659.25, 783.99, 1046.5, 783.99, 659.25, 587.33, 523.25,
+      ];
+      let ac,
+        tm,
+        ni = 0,
+        synthOn = false;
+      const tone = (f, t) => {
+        const o = ac.createOscillator(),
+          g = ac.createGain();
+        o.type = "triangle";
+        o.frequency.value = f;
+        g.gain.setValueAtTime(0, t);
+        g.gain.linearRampToValueAtTime(0.12, t + 0.03);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 1.1);
+        o.connect(g);
+        g.connect(ac.destination);
+        o.start(t);
+        o.stop(t + 1.2);
+      };
+      const synthStart = () => {
+        ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+        ac.resume();
+        synthOn = true;
+        (function step() {
+          if (!synthOn) return;
+          tone(NOTES[ni++ % NOTES.length], ac.currentTime + 0.02);
+          tm = setTimeout(step, 420);
+        })();
+        sync();
+      };
+      const synthStop = () => {
+        synthOn = false;
+        clearTimeout(tm);
+        sync();
+      };
+
+      const isOn = () => (MUSIC_SRC ? !bg.paused : synthOn);
+      const play = () => (MUSIC_SRC ? bg.play().catch(() => {}) : synthStart());
+      const stop = () => (MUSIC_SRC ? bg.pause() : synthStop());
+      const sync = () => {
+        const on = isOn();
+        mus.classList.toggle("off", !on);
+        mus.setAttribute(
+          "aria-label",
+          on ? "إيقاف الموسيقى" : "تشغيل الموسيقى",
+        );
+      };
+      bg.onplay = bg.onpause = sync;
+      mus.onclick = () => (isOn() ? stop() : play());
+
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("in");
+          }),
+        { threshold: 0.15 },
+      );
+
+      function petals() {
+        const em = ["🌸", "🌹", "🩷", "🤍"];
+        setInterval(() => {
+          const p = document.createElement("i");
+          p.className = "p";
+          p.textContent = em[(Math.random() * 4) | 0];
+          p.style.cssText = `left:${Math.random() * 100}vw;font-size:${14 + Math.random() * 14}px;animation-duration:${7 + Math.random() * 6}s`;
+          document.body.append(p);
+          p.onanimationend = () => p.remove();
+        }, 1000);
+      }
+
+      $("#flip").onclick = () => {
+        $("#flip").disabled = true;
+        $("#app").classList.remove("f");
+        petals();
+        mus.hidden = false;
+        play();
+        setTimeout(() => {
+          $("#intro").hidden = true;
+          $("#rest").hidden = false;
+          scrollTo(0, 0);
+          document.querySelectorAll(".rv").forEach((e) => io.observe(e));
+        }, 1700);
+      };
+
+      $("#heart").onclick = (e) => {
+        const h = e.currentTarget;
+        h.classList.remove("b");
+        void h.offsetWidth;
+        h.classList.add("b");
+        if (navigator.vibrate) navigator.vibrate([90, 70, 90, 500, 90, 70, 90]);
+        $("#hm").textContent = "ده بيدق ليكي إنتي بس 🩷";
+      };
+
+      function confetti() {
+        const c = $("#cf"),
+          x = c.getContext("2d"),
+          cols = ["#ff7eb6", "#ff2d87", "#ffb3d1", "#ffffff"];
+        c.width = innerWidth;
+        c.height = innerHeight;
+        c.hidden = false;
+        const a = Array.from({ length: 90 }, () => ({
+          x: Math.random() * c.width,
+          y: -20 - Math.random() * 300,
+          r: 4 + Math.random() * 5,
+          v: 2 + Math.random() * 3,
+          c: cols[(Math.random() * 4) | 0],
+          s: Math.random() * 6,
+        }));
+        let n = 0;
+        (function d() {
+          x.clearRect(0, 0, c.width, c.height);
+          a.forEach((p) => {
+            p.y += p.v;
+            p.x += Math.sin((p.s += 0.05)) * 1.5;
+            x.fillStyle = p.c;
+            x.fillRect(p.x, p.y, p.r, p.r * 1.6);
+          });
+          if (++n < 300) requestAnimationFrame(d);
+          else c.hidden = true;
+        })();
+      }
+
+      $("#gift").onclick = () => {
+        $("#gift").hidden = true;
+        confetti();
+        const t = $("#msg");
+        let i = 0;
+        (function k() {
+          t.textContent = MSG.slice(0, ++i);
+          if (i < MSG.length) setTimeout(k, 45);
+        })();
+      };
+    </script>
+  </body>
+</html>
