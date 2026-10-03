@@ -16,6 +16,7 @@
         box-sizing: border-box;
         margin: 0;
       }
+
       :root {
         --n: #0a0a0c;
         --n2: #5a1440;
@@ -26,9 +27,11 @@
         padding-top: env(safe-area-inset-top, 0px);
         padding-bottom: env(safe-area-inset-bottom, 0px);
       }
+
       html {
         scroll-behavior: smooth;
       }
+
       body {
         font-family: Cairo, Tahoma, sans-serif;
         color: var(--w);
@@ -41,9 +44,11 @@
         line-height: 1.9;
         font-size: 17px;
       }
+
       [hidden] {
         display: none !important;
       }
+
       h1,
       h2,
       .big {
@@ -51,28 +56,38 @@
         font-weight: 700;
         line-height: 1.5;
       }
+
       section {
         padding: 56px 22px;
         max-width: 560px;
         margin: auto;
         text-align: center;
       }
+
       #app {
-        transition: transform 1.6s cubic-bezier(0.6, -0.25, 0.3, 1.25);
+        transition: transform 1.6s cubic-bezier(0.65, 0, 0.35, 1);
       }
+
+      #stage {
+        overflow: hidden;
+      }
+
       #app.f {
         transform: rotate(180deg);
       }
+
       #intro {
         min-height: 100vh;
         display: grid;
         align-content: center;
         gap: 18px;
       }
+
       #intro .big {
         font-size: 40px;
         color: var(--pk);
       }
+
       button,
       .btn {
         font: inherit;
@@ -87,33 +102,40 @@
         box-shadow: 0 8px 26px #ff2d8766;
         cursor: pointer;
       }
+
       button:focus-visible,
       .btn:focus-visible {
         outline: 3px solid var(--pu);
         outline-offset: 3px;
       }
+
       h1 {
         font-size: 40px;
       }
+
       h1 span {
         color: var(--pk);
       }
+
       h2 {
         font-size: 30px;
         color: var(--pk);
         margin-bottom: 14px;
       }
+
       .date {
         font-family: "Aref Ruqaa", serif;
         font-size: 56px;
         color: var(--pu);
         line-height: 1.2;
       }
+
       .ecg {
         width: 100%;
         max-width: 340px;
         margin-top: 22px;
       }
+
       .ecg path {
         fill: none;
         stroke: var(--pk);
@@ -124,12 +146,15 @@
         stroke-dashoffset: 420;
         animation: ecg 2.6s linear infinite;
       }
+
       @keyframes ecg {
         to {
           stroke-dashoffset: -420;
         }
       }
+
       .row {
+        scroll-padding-inline: 8vw;
         display: flex;
         gap: 18px;
         overflow-x: auto;
@@ -137,11 +162,13 @@
         padding: 16px 8vw 22px;
         margin: 0 -22px;
       }
+
       .one {
         display: flex;
         justify-content: center;
         padding: 16px 0 22px;
       }
+
       figure {
         background: var(--w);
         color: #333;
@@ -150,12 +177,17 @@
         box-shadow: 0 12px 30px #0008;
         transform: rotate(-2deg);
         flex: 0 0 70%;
-        scroll-snap-align: center;
+        scroll-snap-align: start;
       }
-      .one figure { flex-basis: 55%; }
+
+      .one figure {
+        flex-basis: 55%;
+      }
+
       figure:nth-child(even) {
         transform: rotate(2deg);
       }
+
       figure img,
       .slot {
         width: 100%;
@@ -164,6 +196,7 @@
         display: block;
         border-radius: 3px;
       }
+
       .slot {
         display: grid;
         place-items: center;
@@ -172,13 +205,16 @@
         background: #ff7eb614;
         font-weight: 700;
       }
+
       figcaption {
         margin-top: 8px;
         font-size: 15px;
       }
+
       figcaption:empty {
         display: none;
       }
+
       .note {
         background: #ff7eb61f;
         border-right: 4px solid var(--pu);
@@ -187,9 +223,11 @@
         text-align: right;
         margin: 14px 0;
       }
+
       .note b {
         color: var(--pk);
       }
+
       .chart {
         background: #fff3f8;
         color: #3a1428;
@@ -199,6 +237,7 @@
         box-shadow: 0 12px 30px #0008;
         border-top: 10px solid var(--rd);
       }
+
       .chart h3 {
         font-family: "Aref Ruqaa", serif;
         font-size: 24px;
@@ -206,6 +245,7 @@
         text-align: center;
         margin-bottom: 8px;
       }
+
       .chart p {
         display: flex;
         gap: 10px;
@@ -213,10 +253,12 @@
         padding: 5px 0;
         line-height: 1.7;
       }
+
       .chart p b {
         flex: 0 0 7.2em;
         color: var(--n2);
       }
+
       #heart {
         margin-top: 26px;
         font-size: 64px;
@@ -225,28 +267,34 @@
         padding: 0;
         line-height: 1;
       }
+
       #heart.b {
         animation: beat 0.6s 2;
       }
+
       @keyframes beat {
         30% {
           transform: scale(1.35);
         }
+
         60% {
           transform: scale(0.95);
         }
       }
+
       #hm {
         min-height: 2em;
         color: var(--pk);
         margin-top: 6px;
       }
+
       #msg {
         white-space: pre-line;
         min-height: 12em;
         margin: 18px 0;
         font-size: 19px;
       }
+
       .p {
         position: fixed;
         top: -30px;
@@ -254,17 +302,20 @@
         pointer-events: none;
         animation: fall linear forwards;
       }
+
       @keyframes fall {
         to {
           transform: translateY(112vh) rotate(360deg);
         }
       }
+
       #cf {
         position: fixed;
         inset: 0;
         z-index: 5;
         pointer-events: none;
       }
+
       #mus {
         position: fixed;
         right: 16px;
@@ -279,6 +330,7 @@
         justify-content: center;
         gap: 3px;
       }
+
       #mus i {
         width: 4px;
         height: 6px;
@@ -286,38 +338,47 @@
         background: var(--w);
         animation: eq 0.9s ease-in-out infinite;
       }
+
       #mus i:nth-child(2) {
         animation-delay: 0.2s;
       }
+
       #mus i:nth-child(3) {
         animation-delay: 0.4s;
       }
+
       #mus i:nth-child(4) {
         animation-delay: 0.1s;
       }
+
       #mus.off {
         filter: grayscale(0.7);
         opacity: 0.85;
       }
+
       #mus.off i {
         animation: none;
         height: 6px;
       }
+
       @keyframes eq {
         0%,
         100% {
           height: 6px;
         }
+
         50% {
           height: 22px;
         }
       }
+
       section,
       .chart,
       figure {
         position: relative;
         z-index: 1;
       }
+
       .rv {
         opacity: 0;
         transform: translateY(20px);
@@ -325,17 +386,21 @@
           opacity 0.9s,
           transform 0.9s;
       }
+
       .rv.in {
         opacity: 1;
         transform: none;
       }
+
       @media (prefers-reduced-motion: reduce) {
         .p {
           display: none;
         }
+
         #app {
           transition: none;
         }
+
         .ecg path,
         #mus i {
           animation: none;
@@ -344,94 +409,128 @@
       }
     </style>
   </head>
+
   <body>
     <canvas id="cf" hidden></canvas>
     <audio id="bg" loop preload="auto"></audio>
     <button id="mus" class="off" hidden aria-label="تشغيل الموسيقى">
       <i></i><i></i><i></i><i></i>
     </button>
-    <main id="app" class="f">
-      <section id="intro">
-        <p class="big">الدنيا متشقلبة شوية… 🙃</p>
-        <p>اضغطي عشان تعدليها</p>
-        <div><button id="flip">اقلبي الدنيا</button></div>
-      </section>
-
-      <div id="rest" hidden>
-        <section class="rv">
-          <p class="date">١٠ / ١٠</p>
-          <h1>كل سنة وإنتي طيبة يا مريومتي <span>😍😍🤍</span></h1>
-          <p>بما ان حضرتك بتحبي الدلع قولت مينفعش اعدي اليوم دا بالساهل كدا</p>
-          <svg class="ecg" viewBox="0 0 300 60" aria-hidden="true">
-            <path d="M0 30H78l8-10 8 10h10l8-26 10 52 8-26h14l8-8 8 8H300" />
-          </svg>
+    <div id="stage">
+      <main id="app" class="f">
+        <section id="intro">
+          <p class="big">الدنيا متشقلبة شوية… 🙃</p>
+          <p>اضغطي عشان تعدليها</p>
+          <div><button id="flip">اقلبي الدنيا</button></div>
         </section>
 
-        <section class="rv">
-          <h2>شوية صور كداا</h2>
-          <p>ايه يجدعان الملاك الصغير داا بس</p>🤍</p>
-          <div class="one" id="child"></div>
-          <div class="note">
-            <b>8/9/2021</b><br />عمري ما انسى اليوم دا ابدا كان اول يوم احس فيه بغيره شديده بالشكل دا من وقتها بس عرفت انك حاجه مختلفه عن كل اللي اعرفهم وقابلتهم في حياتي شعور عمري ما انساه لما اكتشفت اني مره واحده كدا من غير اي سبب اني بحب  كانت دي اول مره احس بالاحساس دا كان معاكي انتي 
-          </div>
-             <div class="note">
-            <b>26/7/2026</b><br />
-            اليوم دا كان يوم نتيجتك انا عارف ان انتي ممكن تبقي ناسياه بس انا فاكره ومش هنساه انا اصلا ناسي يوم نتيجتي اليوم دا انا فضلت قاعد قدام اللاب وصفحة الأزهر طول اليوم مستني النتيجه كنت متشوق ليها اوي بجد ولما النتيجه جت ومنار قالتهالي مش قادر اوصفلك كم الفرحه اللي كنت فيه حسيت بفرحه كبيره اوي وكنت فخور بيكي بشكل كبير مع اني معملتش اي حاجه تخليني فخور بالشكل دا ومكنش بينا حاجه حتى بس شعور الفخر دا من وقتها لحد اللحظه دي لسا معايا وهيفضل العمر كلو 
-             </div>
-          <div class="note">
-            <b>25/8/2026</b><br />
-            دا بقا يوم عمري ما هنساه ابدا لما جيت لمامتك وعرفتها اني بحبك وقالتلي اني اقولك واشوف ردك ايه اليوم دا بجد كان غريب اوي اول مره ابدا اعبر عن مشاعري بجد واول مره اقول لواحده انا بحبك مش عارف اوصفلك الشعور بس كان غريب كدا بقالي سنين بحبك بيني وبين نفسي ودلوقتي بقولك انا بحبك وبعرفك اللي جوايا كانت لحظه بجد غريبه عليا         </div>
-        <div class="note">
-            <b>26/8/2026</b><br />
-         دا اليوم التوب بقا يوم ما قولتيلي انك موافقه لو السكشنين الي فوق كنت بقولك عن لخبطت المشاعر اللي كنت فيها اليوم دا اكبرهم لما شوفت الرساله بتاعتك فضلت باصصلها شوية مش عارف افكر حسيت وقتها ان الدنيا وقفت كدا مش فاهم انا حاسس بايه ومش عارف ارد اقول ايه بجد اللي هزو ازاي يعني بعد كل السنين دي اللي كاتم جوايا خلاص معدش فيه كتمان وبقينا مع بعض دا بجددد
-          </div>
-              <div class="note"> <b>10/10/2026</b><br/> والنهارده بقا عيد ميلاد حبيبة قلبي وأغلى حد عندي أول عيد ميلاد ليكي واحنا مع بعض محبتش يعدي كدا بالساهل وقولت اعملك موقع صغير كدااحتفالا بيكي يارب يعجبمك وعلى فكره انا عملته في اليوم اللي كنت بقولك فيه انا مخنوق بسبب مشروع التخرح والشغل والحاجات دي علشان تعرفي اني حتى مهما كنت مخنوق هعمل اللي يفرحك برضو</div>
-        </section>
+        <div id="rest" hidden>
+          <section class="rv">
+            <p class="date">١٠ / ١٠</p>
+            <h1>كل سنة وإنتي طيبة يا مريومتي <span>😍😍🤍</span></h1>
+            <p>
+              بما ان حضرتك بتحبي الدلع قولت مينفعش اعدي اليوم دا بالساهل كدا
+            </p>
+            <svg class="ecg" viewBox="0 0 300 60" aria-hidden="true">
+              <path d="M0 30H78l8-10 8 10h10l8-26 10 52 8-26h14l8-8 8 8H300" />
+            </svg>
+          </section>
 
-        <section class="rv">
-          <h2>ودلوقتي</h2>
-          <p>قولت احط كام صورة للمزه بتاعتي بعد ما بقت دكتوره متألقه وحلوه كدا🌸</p>
-          <div class="row" id="recent"></div>
-        </section>
+          <section class="rv">
+            <h2>شوية صور كداا</h2>
+            <p>ايه يجدعان الملاك الصغير داا بس 🤍</p>
+            <div class="one" id="child"></div>
+            <div class="note">
+              <b>8/9/2021</b><br />عمري ما انسى اليوم دا ابدا كان اول يوم احس
+              فيه بغيره شديده بالشكل دا من وقتها بس عرفت انك حاجه مختلفه عن كل
+              اللي اعرفهم وقابلتهم في حياتي شعور عمري ما انساه لما اكتشفت اني
+              مره واحده كدا من غير اي سبب اني بحب كانت دي اول مره احس بالاحساس
+              دا كان معاكي انتي
+            </div>
+            <div class="note">
+              <b>26/7/2026</b><br />
+              اليوم دا كان يوم نتيجتك انا عارف ان انتي ممكن تبقي ناسياه بس انا
+              فاكره ومش هنساه انا اصلا ناسي يوم نتيجتي اليوم دا انا فضلت قاعد
+              قدام اللاب وصفحة الأزهر طول اليوم مستني النتيجه كنت متشوق ليها اوي
+              بجد ولما النتيجه جت ومنار قالتهالي مش قادر اوصفلك كم الفرحه اللي
+              كنت فيه حسيت بفرحه كبيره اوي وكنت فخور بيكي بشكل كبير مع اني
+              معملتش اي حاجه تخليني فخور بالشكل دا ومكنش بينا حاجه حتى بس شعور
+              الفخر دا من وقتها لحد اللحظه دي لسا معايا وهيفضل العمر كلو
+            </div>
+            <div class="note">
+              <b>25/8/2026</b><br />
+              دا بقا يوم عمري ما هنساه ابدا لما جيت لمامتك وعرفتها اني بحبك
+              وقالتلي اني اقولك واشوف ردك ايه اليوم دا بجد كان غريب اوي اول مره
+              ابدا اعبر عن مشاعري بجد واول مره اقول لواحده انا بحبك مش عارف
+              اوصفلك الشعور بس كان غريب كدا بقالي سنين بحبك بيني وبين نفسي
+              ودلوقتي بقولك انا بحبك وبعرفك اللي جوايا كانت لحظه بجد غريبه عليا
+            </div>
+            <div class="note">
+              <b>26/8/2026</b><br />
+              دا اليوم التوب بقا يوم ما قولتيلي انك موافقه لو السكشنين الي فوق
+              كنت بقولك عن لخبطت المشاعر اللي كنت فيها اليوم دا اكبرهم لما شوفت
+              الرساله بتاعتك فضلت باصصلها شوية مش عارف افكر حسيت وقتها ان الدنيا
+              وقفت كدا مش فاهم انا حاسس بايه ومش عارف ارد اقول ايه بجد اللي هزو
+              ازاي يعني بعد كل السنين دي اللي كاتم جوايا خلاص معدش فيه كتمان
+              وبقينا مع بعض دا بجددد
+            </div>
+            <div class="note">
+              <b>10/10/2026</b><br />
+              والنهارده بقا عيد ميلاد حبيبة قلبي وأغلى حد عندي أول عيد ميلاد
+              ليكي واحنا مع بعض محبتش يعدي كدا بالساهل وقولت اعملك موقع صغير
+              كدااحتفالا بيكي يارب يعجبمك وعلى فكره انا عملته في اليوم اللي كنت
+              بقولك فيه انا مخنوق بسبب مشروع التخرح والشغل والحاجات دي علشان
+              تعرفي اني حتى مهما كنت مخنوق هعمل اللي يفرحك برضو
+            </div>
+          </section>
 
-        <section class="rv">
-          <h2>تقرير طبي غير رسمي 🩺</h2>
-          <div class="chart">
-            <h3>ملف حالة</h3>
-            <p><b>المريض:</b> سعيد</p>
-            <p><b>التشخيص:</b> حب مريم المزمن</p>
-            <p><b>بداية الأعراض:</b> ٨/٩/٢٠٢١</p>
-            <p><b>العلاج:</b>بصراحه مش عايز اتعالج انا مرتاح كداا</p>
-            <p><b>تحت إشراف:</b> الدكتورة مريم، بإذن الله 🩷</p>
-          </div>
-          <button id="heart" aria-label="اسمعي نبضي">🫀</button>
-          <p id="hm">دوسي على القلب</p>
-        </section>
+          <section class="rv">
+            <h2>ودلوقتي</h2>
+            <p>
+              قولت احط كام صورة للمزه بتاعتي بعد ما بقت دكتوره متألقه وحلوه
+              كدا🌸
+            </p>
+            <div class="row" id="recent"></div>
+          </section>
 
-        <section class="rv">
-          <h2>وفي حاجة أخيرة</h2>
-          <button id="gift">افتحي رسالتي 💌</button>
-          <p id="msg"></p>
-        </section>
-      </div>
-    </main>
+          <section class="rv">
+            <h2>تقرير طبي غير رسمي 🩺</h2>
+            <div class="chart">
+              <h3>ملف حالة</h3>
+              <p><b>المريض:</b> سعيد</p>
+              <p><b>التشخيص:</b> حب مريم المزمن</p>
+              <p><b>بداية الأعراض:</b> ٨/٩/٢٠٢١</p>
+              <p><b>العلاج:</b>بصراحه مش عايز اتعالج انا مرتاح كداا</p>
+              <p><b>تحت إشراف:</b> الدكتورة مريم، بإذن الله 🩷</p>
+            </div>
+            <button id="heart" aria-label="اسمعي نبضي">🫀</button>
+            <p id="hm">دوسي على القلب</p>
+          </section>
 
+          <section class="rv">
+            <h2>وفي حاجة أخيرة</h2>
+            <button id="gift">افتحي رسالتي 💌</button>
+            <p id="msg"></p>
+          </section>
+        </div>
+      </main>
+    </div>
     <script>
       /* ===== إعدادات: عدّل من هنا ===== */
       // حط مسار كل صورة (مثال: "photos/maryam-kid.jpg") أو رابط. سيب "" يظهر مكان فاضي.
       const PHOTOS = {
-  childhood: "photos/child.jpg",
-  recent: [
-    "photos/recent-1.jpg",
-    "photos/recent-2.jpg",
-    "photos/recent-3.jpg",
-    "photos/recent-4.jpg",
-  ],
-};
+        childhood: "photos/child.jpg",
+        recent: [
+          "photos/recent-1.jpg",
+          "photos/recent-2.jpg",
+          "photos/recent-3.jpg",
+          "photos/recent-4.jpg",
+        ],
+      };
       // تقدر تزود صور أو تقلل بزيادة/حذف عناصر recent، وتضيف تعليق من CAPTIONS بنفس الترتيب
       const CAPTIONS = { childhood: "", recent: ["", "", "", ""] };
       // ملف الموسيقى (mp3 أو m4a) جنب الصفحة، مثال: "music/song.mp3". بيشتغل أول ما تدوس "اقلبي الدنيا"، والزرار اللي في الركن هو اللي بيتحكم فيها. لو فاضي بيشتغل لحن بسيط مدمج مؤقتًا
-     const MUSIC_SRC = "music/song.mp3";
+      const MUSIC_SRC = "music/song.mp3";
       const MSG = `كل سنه وانتي طيبة وبألف خير يا حبيبتي.
       كل سنه وانتي معايا ومحققه كل احلامك ومبسوطه ومتهنية.
       كل سنه وانا بحبك وفخور بيكي وبأي انجاز حققتيه ولسا هتحققيه.
